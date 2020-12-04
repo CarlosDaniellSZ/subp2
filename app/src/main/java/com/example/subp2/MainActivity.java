@@ -49,6 +49,29 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void eventoDatabase() {
+        databaseReference.child("FirebaseSub").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                listpessoal.clear();
+                for (DataSnapshot objSnapShot:snapshot.getChildren()){
+                    CadPessoal p = objSnapShot.getValue(CadPessoal.class);
+                    listpessoal.add(p);
+                }
+                arrayadapterpessoal = new ArrayAdapter<CadPessoal>(MainActivity.this,
+                        android.R.layout.simple_list_item_1, listpessoal);
+                ListV_dados.setAdapter(arrayadapterpessoal);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
     private void iniciarFirebase() {
         FirebaseApp.initializeApp(MainActivity. this);
         firebasedatabase = FirebaseDatabase.getInstance();
