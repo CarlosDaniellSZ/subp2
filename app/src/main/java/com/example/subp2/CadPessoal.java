@@ -1,6 +1,5 @@
 package com.example.subp2;
 
-import java.util.Date;
 
 public class CadPessoal {
 
@@ -8,8 +7,11 @@ public class CadPessoal {
     private String nome;
     private Integer idade;
     private Integer cpf;
-    private Date datanascimento;
+    private Integer datanascimento;
 
+    public CadPessoal(){
+
+    }
     public String getId() {
         return id;
     }
@@ -42,11 +44,11 @@ public class CadPessoal {
         this.cpf = cpf;
     }
 
-    public Date getDatanascimento() {
+    public Integer getDatanascimento() {
         return datanascimento;
     }
 
-    public void setDatanascimento(Date datanascimento) {
+    public void setDatanascimento(Integer datanascimento) {
         this.datanascimento = datanascimento;
     }
 

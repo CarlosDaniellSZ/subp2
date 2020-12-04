@@ -108,6 +108,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <ListView
+        android:id="@+id/list_V"
         android:layout_width="379dp"
         android:layout_height="352dp"
         android:layout_marginStart="18dp"
@@ -126,6 +127,7 @@
         android:layout_marginStart="87dp"
         android:layout_marginTop="11dp"
         android:layout_marginEnd="111dp"
+        android:onClick="botaoClick"
         android:text="Cadastrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
